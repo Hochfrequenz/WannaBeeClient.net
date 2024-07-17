@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  transformer:
+    image: ghcr.io/hochfrequenz/ahbicht-functions:v0.1.0
+    environment:
+      - StorageProvider=Directory
+    ports:
+      - ${AHBICHT_FUNCTIONS_REST_PORT:-7071}:7071
