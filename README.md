@@ -21,7 +21,7 @@ dotnet add package AhbichtClient
 https://github.com/Hochfrequenz/AhbichtClient.net/blob/b234147488d95ac773d4f3942b5b1125dd4004ba/AhbichtClient/AhbichtClientQuickStartApp/Program.cs#L1-L54
 
 This prints:
-> The package '10P' is equivalent to [20] ? [244]
+> The package '10P' is equivalent to [20] ∧ [244]
 > 
 > where '[244]' refers to 'Wenn SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) in dieser SG8 vorhanden'
 > 
