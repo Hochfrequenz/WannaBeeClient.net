@@ -25,7 +25,7 @@ jobs:
         # You can update the tokens in the repository settings:
         # https://github.com/Hochfrequenz/AhbichtClient/settings/secrets/actions/GHCR_PAT
         # https://github.com/Hochfrequenz/AhbichtClient/settings/secrets/actions/GHCR_USR
-        # Tokens will expire 2025-01-31
+        # Tokens will expire 2025-07-01
         run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ secrets.GHCR_USR }} --password-stdin
       - name: Start containers
         run: docker compose -f "AhbichtClient/AhbichtClient.IntegrationTest/docker-compose.yml" up -d
@@ -58,8 +58,8 @@ jobs:
         uses: warrenbuckley/Setup-Nuget@v1
       - name: Nuget push AhbichtClient
         working-directory: "AhbichtClient/AhbichtClient"
-        # token: https://github.com/Hochfrequenz/AhbichtClient/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
-        # expires 2025-02-01
+        # token: https://github.com/Hochfrequenz/AhbichtClient.net/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
+        # expires 2025-07-17; token is owned by konstantin as of now.
         run: |
           nuget setApiKey ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
           nuget push .\bin\Release\*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
