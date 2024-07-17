@@ -8,6 +8,14 @@ This backend is available free of charge but without warranty by Hochfrequenz (b
 Or you can host it yourself like any other microservice.
 Hochfrequenz can provide you with a standalone Docker image; Contact [@JoschaMetze](https://github.com/joschametze) (`joscha.metze+ahbicht@hochfrequenz.de`).
 
+## Installation
+
+Install it from nuget [AhbichtClient](https://www.nuget.org/packages/AhbichtClient):
+
+```bash
+dotnet add package AhbichtClient
+```
+
 ## How to use this library (Quickstart with public backend)
 
 https://github.com/Hochfrequenz/AhbichtClient.net/blob/b234147488d95ac773d4f3942b5b1125dd4004ba/AhbichtClient/AhbichtClientQuickStartApp/Program.cs#L1-L54
@@ -32,14 +40,6 @@ If you have access to our docker image, check out the [docker-compose.yml](Ahbic
 #### Public Instance
 If you're just playing around, you can use our public instance at `https://ahbicht.azurewebsites.net`.
 We can't guarantee uptime or performance, but it should be good enough for testing.
-
-### Using the client
-
-Install it from nuget [AhbichtClient](https://www.nuget.org/packages/AhbichtClient):
-
-```bash
-dotnet add package AhbichtClient
-```
 
 ### Authentication
 
