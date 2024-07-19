@@ -3,31 +3,13 @@ using System.Runtime.Serialization;
 namespace AhbichtClient.Model;
 
 /// <summary>
-/// A Requirement Indicator is either the Merkmal <see cref="ModalMark"/> or the <see cref="PrefixOperator"/> of the data element/data element group/segment/segment group at which it is used.
+///  Operator which does not function to combine conditions, but as requirement indicator.
+/// It stands alone or in front of a condition expression. Please find detailed descriptions of the operators and their usage in the "Allgemeine Festlegungen".
+/// Note that with MaKo2022 introduced 2022-04-01 the "O" and "U" prefix operators will be deprecated.
+/// Refer to the "Allgemeine Festlegungen" valid up to 2022-04-01 for deprecated "O" and "U".
 /// </summary>
-public enum RequirementIndicator
+public enum PrefixOperator
 {
-    /// <summary>
-    /// German term for "Must". Is required for the correct structure of the message.
-    /// If the following condition is not fulfilled, the information must not be given ("must not")
-    /// </summary>
-    /// <seealso cref="ModalMark.Muss"/>
-    [EnumMember(Value = "MUSS")] Muss,
-
-    /// <summary>
-    /// German term for "Should". Is required for technical reasons.
-    /// Always followed by a condition.
-    /// If the following condition is not fulfilled, the information must not be given.
-    /// </summary>
-    /// <seealso cref="ModalMark.Soll"/>
-    [EnumMember(Value = "SOLL")] Soll,
-
-    /// <summary>
-    /// German term for "Can". Optional
-    /// </summary>
-    /// <seealso cref="ModalMark.Kann"/>
-    [EnumMember(Value = "KANN")] Kann,
-
     /// <summary>
     /// The "X" operator. See "Allgemeine Festlegungen" Kapitel 6.8.1. Usually this just means something is required
     /// or required under circumstances defined in a trailing condition expression.
@@ -36,7 +18,6 @@ public enum RequirementIndicator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "X" as logical operator is deprecated since 2022-04-01. It will be replaced with the "⊻" symbol.
     /// </summary>
-    /// <seealso cref="PrefixOperator.X"/>
     [EnumMember(Value = "X")] X,
 
     /// <summary>
@@ -48,7 +29,6 @@ public enum RequirementIndicator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "O" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∨" symbol.
     /// </summary>
-    /// <seealso cref="PrefixOperator.O"/>
     [EnumMember(Value = "O")] O,
 
     /// <summary>
@@ -58,6 +38,5 @@ public enum RequirementIndicator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "U" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∧" symbol.
     /// </summary>
-    /// <seealso cref="PrefixOperator.U"/>
     [EnumMember(Value = "U")] U
 }
