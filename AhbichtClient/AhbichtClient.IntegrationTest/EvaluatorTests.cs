@@ -58,6 +58,37 @@ public class EvaluatorTests : IClassFixture<ClientFixture>
     }
 
     [Fact]
+    public async Task Multi_Modal_Expression_Can_Be_Evaluated()
+    {
+        var httpClientFactory = _client.HttpClientFactory;
+        IContentEvaluator client = new AhbichtRestClient(httpClientFactory, _authenticator);
+        var actual = await client.Evaluate("Muss [2] Soll [3]", new ContentEvaluationResult
+        {
+            Hints = new Dictionary<string, string?>(),
+            FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>(),
+            RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
+            {
+                {"3", ConditionFulfilledValue.Fulfilled},
+                {"2", ConditionFulfilledValue.Unfulfilled},
+            },
+        });
+        actual.Should().BeEquivalentTo(new AhbExpressionEvaluationResult
+        {
+            FormatConstraintEvaluationResult = new FormatConstraintEvaluationResult
+            {
+                FormatConstraintsFulfilled = true,
+            },
+            RequirementConstraintEvaluationResult = new RequirementConstraintEvaluationResult
+            {
+                FormatConstraintsExpression = null,
+                RequirementConstraintsFulfilled = true,
+                RequirementIsConditional = true,
+            },
+            RequirementIndicator = RequirementIndicator.Soll,
+        });
+    }
+
+    [Fact]
     public async Task Expressions_Cannot_Be_Evaluated()
     {
         var httpClientFactory = _client.HttpClientFactory;
