@@ -35,7 +35,7 @@
     &lt;ProjectFile&gt;77598126-7BB0-4C07-BF06-331033E0DE78/f:EvaluatorTests.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=471524d0_002D8f73_002D47dc_002Da47c_002Dc746cda7b03c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=471524d0_002D8f73_002D47dc_002Da47c_002Dc746cda7b03c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
       &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtFunctionsClient.IntegrationTest.CategorizedKeyExtractorTests.Keys_Can_Be_Extracted&lt;/TestId&gt;&#xD;
@@ -47,7 +47,7 @@
     &lt;ProjectFile&gt;77598126-7BB0-4C07-BF06-331033E0DE78/f:EvaluatorTests.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86f0f73_002D7e5b_002D4563_002D85e5_002D460f4fafab72/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Expressions_Can_Be_Evaluated" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86f0f73_002D7e5b_002D4563_002D85e5_002D460f4fafab72/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Expressions_Can_Be_Evaluated" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;Project Location="C:\github\ahbicht-functions-dotnet-client\AhbichtFunctionsClient\ExampleAspNetCoreApplication.Test" Presentation="&amp;lt;ExampleAspNetCoreApplication.Test&amp;gt;" /&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;

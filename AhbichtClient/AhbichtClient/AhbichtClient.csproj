@@ -5,8 +5,9 @@
         <Nullable>enable</Nullable>
         <RepositoryUrl>https://github.com/Hochfrequenz/AhbichtFunctionsClient.net</RepositoryUrl>
         <License>MIT</License>
-        <TargetFramework>net8.0</TargetFramework>
         <PackageId>AhbichtClient</PackageId>
+        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
