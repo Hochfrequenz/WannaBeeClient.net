@@ -13,9 +13,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 9
-      - name: Build/Check for compile errors (dotnet build)
-        working-directory: "AhbichtClient"
-        run: dotnet build --configuration Release
       - name: Log into registry
         # GHCR_PAT is a personal access token for the Github Container Registry; You can create it using the following steps:
         # 1) Go to https://github.com/settings/tokens
@@ -29,6 +26,9 @@ jobs:
         run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ secrets.GHCR_USR }} --password-stdin
       - name: Start containers
         run: docker compose -f "AhbichtClient/AhbichtClient.IntegrationTest/docker-compose.yml" up -d
+      - name: Build/Check for compile errors (dotnet build)
+        working-directory: "AhbichtClient"
+        run: dotnet build --configuration Release
       - name: Run Unit Tests (dotnet test) # never ever release with failing tests!
         working-directory: "AhbichtClient"
         run: dotnet test --configuration Release
