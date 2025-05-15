@@ -7,7 +7,8 @@ public class CategorizedKeyExtractError : ArgumentException
 {
     public string Expression { get; private set; }
 
-    public CategorizedKeyExtractError(string expression, string? message = null) : base(message)
+    public CategorizedKeyExtractError(string expression, string? message = null)
+        : base(message)
     {
         Expression = expression;
     }

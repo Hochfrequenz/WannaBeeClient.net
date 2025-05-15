@@ -16,7 +16,6 @@ public class EvaluatedFormatConstraint
     /// <summary>
     /// true if data obey the format constraint expression
     /// </summary>
-
     [System.Text.Json.Serialization.JsonPropertyName("format_constraint_fulfilled")]
     public required bool FormatConstraintFulfilled { get; set; }
 }

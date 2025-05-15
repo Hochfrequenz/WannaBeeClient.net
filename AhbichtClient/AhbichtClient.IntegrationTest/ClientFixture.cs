@@ -17,10 +17,13 @@ public class ClientFixture : IClassFixture<ClientFixture>
     public ClientFixture()
     {
         var services = new ServiceCollection();
-        services.AddHttpClient("AhbichtClient", client =>
-        {
-            client.BaseAddress = new Uri("http://localhost:7071"); // Check docker-compose.yml
-        });
+        services.AddHttpClient(
+            "AhbichtClient",
+            client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:7071"); // Check docker-compose.yml
+            }
+        );
         var serviceProvider = services.BuildServiceProvider();
         ServiceCollection = services;
         HttpClientFactory = serviceProvider.GetService<IHttpClientFactory>()!;

@@ -18,7 +18,8 @@ public enum PrefixOperator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "X" as logical operator is deprecated since 2022-04-01. It will be replaced with the "⊻" symbol.
     /// </summary>
-    [EnumMember(Value = "X")] X,
+    [EnumMember(Value = "X")]
+    X,
 
     /// <summary>
     /// The "O" operator means that at least one out of multiple possible qualifiers/codes has to be given.
@@ -29,7 +30,8 @@ public enum PrefixOperator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "O" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∨" symbol.
     /// </summary>
-    [EnumMember(Value = "O")] O,
+    [EnumMember(Value = "O")]
+    O,
 
     /// <summary>
     /// The "U" operator means that all provided qualifiers/codes have to be used.
@@ -38,5 +40,6 @@ public enum PrefixOperator
     /// The prefix operator works differently from the logical operator in condition expressions!
     /// The usage of "U" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∧" symbol.
     /// </summary>
-    [EnumMember(Value = "U")] U
+    [EnumMember(Value = "U")]
+    U,
 }

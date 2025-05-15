@@ -13,5 +13,9 @@ public interface IConditionKeyToTextResolver
     /// given a condition key, returns the text that is associated with it
     /// </summary>
     /// <raises><see cref="ConditionNotResolvableException"/> if the condition key is not resolvable</raises>
-    public Task<ConditionKeyConditionTextMapping> ResolveCondition(string conditionKey, EdifactFormat format, EdifactFormatVersion formatVersion);
+    public Task<ConditionKeyConditionTextMapping> ResolveCondition(
+        string conditionKey,
+        EdifactFormat format,
+        EdifactFormatVersion formatVersion
+    );
 }

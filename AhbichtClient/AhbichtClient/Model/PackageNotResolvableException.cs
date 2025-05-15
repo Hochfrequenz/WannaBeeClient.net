@@ -7,7 +7,8 @@ public class PackageNotResolvableException : ArgumentException
 {
     public string PackageKey { get; private set; }
 
-    public PackageNotResolvableException(string packageKey, string? message = null) : base(message)
+    public PackageNotResolvableException(string packageKey, string? message = null)
+        : base(message)
     {
         PackageKey = packageKey;
     }

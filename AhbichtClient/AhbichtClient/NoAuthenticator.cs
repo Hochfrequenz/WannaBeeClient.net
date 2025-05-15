@@ -9,6 +9,8 @@ public class NoAuthenticator : IAhbichtAuthenticator
 
     public Task<string> Authenticate(HttpClient client)
     {
-        throw new NotImplementedException("This must never be called, because we don't use authentication.");
+        throw new NotImplementedException(
+            "This must never be called, because we don't use authentication."
+        );
     }
 }

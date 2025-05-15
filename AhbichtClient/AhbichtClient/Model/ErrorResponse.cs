@@ -16,7 +16,6 @@ internal class ErrorResponse
     /// <summary>
     /// http status code, e.g 400 for bad request
     /// </summary>
-
     [System.Text.Json.Serialization.JsonPropertyName("code")]
     public int Code { get; set; }
 }

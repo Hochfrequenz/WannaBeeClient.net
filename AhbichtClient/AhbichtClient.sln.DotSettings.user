@@ -1,4 +1,9 @@
 <wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=20469907_002Dafdb_002D49f1_002D83fd_002D8eb6c2bc13a9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test_That_Setup_Works_As_Designed" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::39992205-201D-445B-A58D-BB098F5EFC1D::net9.0::ExampleAspNetCoreApplication.Test.ApplicationTest.Test_That_Setup_Works_As_Designed&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4fa21289_002Debff_002D4c5a_002D8d89_002D3c311da32c05/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
@@ -43,17 +48,13 @@
       &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtFunctionsClient.IntegrationTest.EvaluatorTests.Expressions_Can_Be_Evaluated&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtFunctionsClient.IntegrationTest.EvaluatorTests&lt;/TestId&gt;&#xD;
       &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtClient.IntegrationTest.QuickStart&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::39992205-201D-445B-A58D-BB098F5EFC1D::net9.0::ExampleAspNetCoreApplication.Test.ApplicationTest.Test_That_Setup_Works_As_Designed&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
     &lt;ProjectFile&gt;77598126-7BB0-4C07-BF06-331033E0DE78/f:EvaluatorTests.cs&lt;/ProjectFile&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a86f0f73_002D7e5b_002D4563_002D85e5_002D460f4fafab72/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Expressions_Can_Be_Evaluated" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;Project Location="C:\github\ahbicht-functions-dotnet-client\AhbichtFunctionsClient\ExampleAspNetCoreApplication.Test" Presentation="&amp;lt;ExampleAspNetCoreApplication.Test&amp;gt;" /&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtClient.IntegrationTest.ResolverTests&lt;/TestId&gt;&#xD;
-      &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net8.0::AhbichtClient.IntegrationTest.QuickStart.Test_Ahbicht_Communication&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-    &lt;Project Location="C:\github\ahbicht-functions-dotnet-client\AhbichtFunctionsClient\AhbichtClient.IntegrationTest" Presentation="&amp;lt;AhbichtClient.IntegrationTest&amp;gt;" /&gt;&#xD;
-  &lt;/Or&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::AhbichtClient.IntegrationTest.CategorizedKeyExtractorTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

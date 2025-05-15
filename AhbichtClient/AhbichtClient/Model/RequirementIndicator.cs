@@ -12,7 +12,8 @@ public enum RequirementIndicator
     /// If the following condition is not fulfilled, the information must not be given ("must not")
     /// </summary>
     /// <seealso cref="ModalMark.Muss"/>
-    [EnumMember(Value = "MUSS")] Muss,
+    [EnumMember(Value = "MUSS")]
+    Muss,
 
     /// <summary>
     /// German term for "Should". Is required for technical reasons.
@@ -20,13 +21,15 @@ public enum RequirementIndicator
     /// If the following condition is not fulfilled, the information must not be given.
     /// </summary>
     /// <seealso cref="ModalMark.Soll"/>
-    [EnumMember(Value = "SOLL")] Soll,
+    [EnumMember(Value = "SOLL")]
+    Soll,
 
     /// <summary>
     /// German term for "Can". Optional
     /// </summary>
     /// <seealso cref="ModalMark.Kann"/>
-    [EnumMember(Value = "KANN")] Kann,
+    [EnumMember(Value = "KANN")]
+    Kann,
 
     /// <summary>
     /// The "X" operator. See "Allgemeine Festlegungen" Kapitel 6.8.1. Usually this just means something is required
@@ -37,7 +40,8 @@ public enum RequirementIndicator
     /// The usage of "X" as logical operator is deprecated since 2022-04-01. It will be replaced with the "⊻" symbol.
     /// </summary>
     /// <seealso cref="PrefixOperator.X"/>
-    [EnumMember(Value = "X")] X,
+    [EnumMember(Value = "X")]
+    X,
 
     /// <summary>
     /// The "O" operator means that at least one out of multiple possible qualifiers/codes has to be given.
@@ -49,7 +53,8 @@ public enum RequirementIndicator
     /// The usage of "O" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∨" symbol.
     /// </summary>
     /// <seealso cref="PrefixOperator.O"/>
-    [EnumMember(Value = "O")] O,
+    [EnumMember(Value = "O")]
+    O,
 
     /// <summary>
     /// The "U" operator means that all provided qualifiers/codes have to be used.
@@ -59,5 +64,6 @@ public enum RequirementIndicator
     /// The usage of "U" as logical operator is also deprecated since 2022-04-01. It will be replaced with the "∧" symbol.
     /// </summary>
     /// <seealso cref="PrefixOperator.U"/>
-    [EnumMember(Value = "U")] U
+    [EnumMember(Value = "U")]
+    U,
 }

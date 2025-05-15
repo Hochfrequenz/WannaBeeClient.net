@@ -17,7 +17,7 @@ public class MweWithoutAspNetTest
         {
             return new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:7071") // or use "http://ahbicht.azurewebsites.net
+                BaseAddress = new Uri("http://localhost:7071"), // or use "http://ahbicht.azurewebsites.net
             };
         }
     }

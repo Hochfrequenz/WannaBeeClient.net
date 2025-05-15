@@ -25,14 +25,18 @@ public class CategorizedKeyExtractorTests : IClassFixture<ClientFixture>
         var httpClientFactory = _client.HttpClientFactory;
         ICategorizedKeyExtractor client = new AhbichtRestClient(httpClientFactory, _authenticator);
         var actual = await client.ExtractKeys("[2] U ([3] O [4])[901] U [555]");
-        actual.Should().BeEquivalentTo(new CategorizedKeyExtract
-        {
-            HintKeys = new List<string> { "555" },
-            FormatConstraintKeys = new List<string> { "901" },
-            RequirementConstraintKeys = new List<string> { "2", "3", "4" },
-            PackageKeys = new List<string>(),
-            TimeConditionKeys = new List<string>()
-        });
+        actual
+            .Should()
+            .BeEquivalentTo(
+                new CategorizedKeyExtract
+                {
+                    HintKeys = new List<string> { "555" },
+                    FormatConstraintKeys = new List<string> { "901" },
+                    RequirementConstraintKeys = new List<string> { "2", "3", "4" },
+                    PackageKeys = new List<string>(),
+                    TimeConditionKeys = new List<string>(),
+                }
+            );
     }
 
     [Fact]
@@ -40,7 +44,11 @@ public class CategorizedKeyExtractorTests : IClassFixture<ClientFixture>
     {
         var httpClientFactory = _client.HttpClientFactory;
         ICategorizedKeyExtractor client = new AhbichtRestClient(httpClientFactory, _authenticator);
-        var creatingCategorizedKeyExtractForMalformedExpression = async () => await client.ExtractKeys("[2] U [3] O [4])[901] U [555]"); // <-- contains a syntax error
-        await creatingCategorizedKeyExtractForMalformedExpression.Should().ThrowAsync<CategorizedKeyExtractError>().WithMessage("*Syntax error*");
+        var creatingCategorizedKeyExtractForMalformedExpression = async () =>
+            await client.ExtractKeys("[2] U [3] O [4])[901] U [555]"); // <-- contains a syntax error
+        await creatingCategorizedKeyExtractForMalformedExpression
+            .Should()
+            .ThrowAsync<CategorizedKeyExtractError>()
+            .WithMessage("*Syntax error*");
     }
 }

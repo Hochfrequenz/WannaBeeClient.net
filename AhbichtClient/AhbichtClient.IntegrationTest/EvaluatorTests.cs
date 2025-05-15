@@ -24,37 +24,47 @@ public class EvaluatorTests : IClassFixture<ClientFixture>
     {
         var httpClientFactory = _client.HttpClientFactory;
         IContentEvaluator client = new AhbichtRestClient(httpClientFactory, _authenticator);
-        var actual = await client.Evaluate("Muss ([2]O[3])[902][501]", new ContentEvaluationResult
-        {
-            Hints = new Dictionary<string, string?> { { "501", "foo" } },
-            FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>
+        var actual = await client.Evaluate(
+            "Muss ([2]O[3])[902][501]",
+            new ContentEvaluationResult
             {
-                {"902", new EvaluatedFormatConstraint
+                Hints = new Dictionary<string, string?> { { "501", "foo" } },
+                FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>
+                {
                     {
-                        FormatConstraintFulfilled = true,
-                        ErrorMessage = null
-                    }
-                }
-            },
-            RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
-            {
-                {"2", ConditionFulfilledValue.Fulfilled},
-                {"3", ConditionFulfilledValue.Unfulfilled},
-            },
-        });
-        actual.Should().BeEquivalentTo(new AhbExpressionEvaluationResult
-        {
-            FormatConstraintEvaluationResult = new FormatConstraintEvaluationResult
-            {
-                FormatConstraintsFulfilled = true,
-            },
-            RequirementConstraintEvaluationResult = new RequirementConstraintEvaluationResult
-            {
-                FormatConstraintsExpression = "[902]",
-                RequirementConstraintsFulfilled = true,
-                RequirementIsConditional = true,
+                        "902",
+                        new EvaluatedFormatConstraint
+                        {
+                            FormatConstraintFulfilled = true,
+                            ErrorMessage = null,
+                        }
+                    },
+                },
+                RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
+                {
+                    { "2", ConditionFulfilledValue.Fulfilled },
+                    { "3", ConditionFulfilledValue.Unfulfilled },
+                },
             }
-        });
+        );
+        actual
+            .Should()
+            .BeEquivalentTo(
+                new AhbExpressionEvaluationResult
+                {
+                    FormatConstraintEvaluationResult = new FormatConstraintEvaluationResult
+                    {
+                        FormatConstraintsFulfilled = true,
+                    },
+                    RequirementConstraintEvaluationResult =
+                        new RequirementConstraintEvaluationResult
+                        {
+                            FormatConstraintsExpression = "[902]",
+                            RequirementConstraintsFulfilled = true,
+                            RequirementIsConditional = true,
+                        },
+                }
+            );
     }
 
     [Fact]
@@ -62,30 +72,38 @@ public class EvaluatorTests : IClassFixture<ClientFixture>
     {
         var httpClientFactory = _client.HttpClientFactory;
         IContentEvaluator client = new AhbichtRestClient(httpClientFactory, _authenticator);
-        var actual = await client.Evaluate("Muss [2] Soll [3]", new ContentEvaluationResult
-        {
-            Hints = new Dictionary<string, string?>(),
-            FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>(),
-            RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
+        var actual = await client.Evaluate(
+            "Muss [2] Soll [3]",
+            new ContentEvaluationResult
             {
-                {"3", ConditionFulfilledValue.Fulfilled},
-                {"2", ConditionFulfilledValue.Unfulfilled},
-            },
-        });
-        actual.Should().BeEquivalentTo(new AhbExpressionEvaluationResult
-        {
-            FormatConstraintEvaluationResult = new FormatConstraintEvaluationResult
-            {
-                FormatConstraintsFulfilled = true,
-            },
-            RequirementConstraintEvaluationResult = new RequirementConstraintEvaluationResult
-            {
-                FormatConstraintsExpression = null,
-                RequirementConstraintsFulfilled = true,
-                RequirementIsConditional = true,
-            },
-            RequirementIndicator = RequirementIndicator.Soll,
-        });
+                Hints = new Dictionary<string, string?>(),
+                FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>(),
+                RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
+                {
+                    { "3", ConditionFulfilledValue.Fulfilled },
+                    { "2", ConditionFulfilledValue.Unfulfilled },
+                },
+            }
+        );
+        actual
+            .Should()
+            .BeEquivalentTo(
+                new AhbExpressionEvaluationResult
+                {
+                    FormatConstraintEvaluationResult = new FormatConstraintEvaluationResult
+                    {
+                        FormatConstraintsFulfilled = true,
+                    },
+                    RequirementConstraintEvaluationResult =
+                        new RequirementConstraintEvaluationResult
+                        {
+                            FormatConstraintsExpression = null,
+                            RequirementConstraintsFulfilled = true,
+                            RequirementIsConditional = true,
+                        },
+                    RequirementIndicator = RequirementIndicator.Soll,
+                }
+            );
     }
 
     [Fact]
@@ -93,24 +111,33 @@ public class EvaluatorTests : IClassFixture<ClientFixture>
     {
         var httpClientFactory = _client.HttpClientFactory;
         IContentEvaluator client = new AhbichtRestClient(httpClientFactory, _authenticator);
-        var evaluatingAMalformedExpression = async () => await client.Evaluate("Muss [2]O[3])[902][501]", new ContentEvaluationResult // <-- contains a syntax error
-        {
-            Hints = new Dictionary<string, string?> { { "501", "foo" } },
-            FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>
-            {
-                {"902", new EvaluatedFormatConstraint
+        var evaluatingAMalformedExpression = async () =>
+            await client.Evaluate(
+                "Muss [2]O[3])[902][501]",
+                new ContentEvaluationResult // <-- contains a syntax error
+                {
+                    Hints = new Dictionary<string, string?> { { "501", "foo" } },
+                    FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>
                     {
-                        FormatConstraintFulfilled = true,
-                        ErrorMessage = null
-                    }
+                        {
+                            "902",
+                            new EvaluatedFormatConstraint
+                            {
+                                FormatConstraintFulfilled = true,
+                                ErrorMessage = null,
+                            }
+                        },
+                    },
+                    RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
+                    {
+                        { "2", ConditionFulfilledValue.Fulfilled },
+                        { "3", ConditionFulfilledValue.Unfulfilled },
+                    },
                 }
-            },
-            RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>
-            {
-                {"2", ConditionFulfilledValue.Fulfilled},
-                {"3", ConditionFulfilledValue.Unfulfilled},
-            },
-        });
-        await evaluatingAMalformedExpression.Should().ThrowAsync<ExpressionNotEvaluatableException>().WithMessage("*process rule*");
+            );
+        await evaluatingAMalformedExpression
+            .Should()
+            .ThrowAsync<ExpressionNotEvaluatableException>()
+            .WithMessage("*process rule*");
     }
 }

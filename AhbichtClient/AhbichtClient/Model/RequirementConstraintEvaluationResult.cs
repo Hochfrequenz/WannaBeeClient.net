@@ -1,11 +1,12 @@
 namespace AhbichtClient.Model;
+
 /// <summary>
 /// A class for the result of the requirement constraint evaluation.
 /// </summary>
 public class RequirementConstraintEvaluationResult
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [System.Text.Json.Serialization.JsonPropertyName("format_constraints_expression")]
     public string? FormatConstraintsExpression { get; set; }

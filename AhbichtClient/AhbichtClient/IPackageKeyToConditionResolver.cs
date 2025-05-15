@@ -13,5 +13,9 @@ public interface IPackageKeyToConditionResolver
     /// given a package key, returns the condition that is associated with it
     /// </summary>
     /// <raises><see cref="PackageNotResolvableException"/> if the package key is not resolvable</raises>
-    public Task<PackageKeyConditionExpressionMapping> ResolvePackage(string packageKey, EdifactFormat format, EdifactFormatVersion formatVersion);
+    public Task<PackageKeyConditionExpressionMapping> ResolvePackage(
+        string packageKey,
+        EdifactFormat format,
+        EdifactFormatVersion formatVersion
+    );
 }

@@ -11,5 +11,8 @@ public interface IContentEvaluator
     /// <summary>
     /// given an ahb condition expression and information about which conditions is fulfilled, evaluate the expression as whole
     /// </summary>
-    public Task<AhbExpressionEvaluationResult> Evaluate(string ahbExpression, ContentEvaluationResult contentEvaluationResult);
+    public Task<AhbExpressionEvaluationResult> Evaluate(
+        string ahbExpression,
+        ContentEvaluationResult contentEvaluationResult
+    );
 }

@@ -7,7 +7,8 @@ public class ExpressionNotEvaluatableException : ArgumentException
 {
     public string Expression { get; private set; }
 
-    public ExpressionNotEvaluatableException(string expression, string? message = null) : base(message)
+    public ExpressionNotEvaluatableException(string expression, string? message = null)
+        : base(message)
     {
         Expression = expression;
     }

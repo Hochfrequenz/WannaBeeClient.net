@@ -30,5 +30,5 @@ public enum ConditionFulfilledValue
     /// A hint or unevaluated format constraint which does not have a status of being fulfilled or not
     /// </summary>
     [EnumMember(Value = "NEUTRAL")]
-    Neutral
+    Neutral,
 }

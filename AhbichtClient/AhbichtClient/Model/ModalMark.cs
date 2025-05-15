@@ -14,17 +14,20 @@ public enum ModalMark
     /// German term for "Must". Is required for the correct structure of the message.
     /// If the following condition is not fulfilled, the information must not be given ("must not")
     /// </summary>
-    [EnumMember(Value = "MUSS")] Muss,
+    [EnumMember(Value = "MUSS")]
+    Muss,
 
     /// <summary>
     /// German term for "Should". Is required for technical reasons.
     /// Always followed by a condition.
     /// If the following condition is not fulfilled, the information must not be given.
     /// </summary>
-    [EnumMember(Value = "SOLL")] Soll,
+    [EnumMember(Value = "SOLL")]
+    Soll,
 
     /// <summary>
     /// German term for "Can". Optional
     /// </summary>
-    [EnumMember(Value = "KANN")] Kann
+    [EnumMember(Value = "KANN")]
+    Kann,
 }
