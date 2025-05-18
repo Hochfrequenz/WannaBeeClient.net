@@ -1,11 +1,11 @@
-using AhbichtClient;
+using WannaBeeClient;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 
 builder.Services.AddTransient<IAhbichtAuthenticator, NoAuthenticator>(); // Or you could use ClientIdClientSecretAuthenticator
 builder.Services.AddHttpClient(
-    "AhbichtClient",
+    "WannaBeeClient",
     client =>
     {
         client.BaseAddress = new Uri("http://localhost:7071/"); // or https://ahbicht.azurewebsites.net/
@@ -13,10 +13,10 @@ builder.Services.AddHttpClient(
 );
 
 // you're free to use ahbicht only for _some_ of the services it provides; Just inject the ones you need
-builder.Services.AddTransient<IConditionKeyToTextResolver, AhbichtClient.AhbichtRestClient>();
-builder.Services.AddTransient<IPackageKeyToConditionResolver, AhbichtClient.AhbichtRestClient>();
-builder.Services.AddTransient<ICategorizedKeyExtractor, AhbichtClient.AhbichtRestClient>();
-builder.Services.AddTransient<IContentEvaluator, AhbichtClient.AhbichtRestClient>();
+builder.Services.AddTransient<IConditionKeyToTextResolver, WannaBeeClient.AhbichtRestClient>();
+builder.Services.AddTransient<IPackageKeyToConditionResolver, WannaBeeClient.AhbichtRestClient>();
+builder.Services.AddTransient<ICategorizedKeyExtractor, WannaBeeClient.AhbichtRestClient>();
+builder.Services.AddTransient<IContentEvaluator, WannaBeeClient.AhbichtRestClient>();
 
 var app = builder.Build();
 

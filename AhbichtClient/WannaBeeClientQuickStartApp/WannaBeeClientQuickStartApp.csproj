@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
-    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <Nullable>enable</Nullable>
     <LangVersion>default</LangVersion>
     <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>AhbichtClientQuickStartApp</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\WannaBeeClient\WannaBeeClient.csproj" />
