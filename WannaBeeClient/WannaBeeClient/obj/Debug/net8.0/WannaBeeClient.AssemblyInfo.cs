@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WannaBeeClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0973194dc0e632d06a7257fb64b72b5ce8cb7f76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a647639f8d6687083fd022c4bed2c9842a5e3c12")]
 [assembly: System.Reflection.AssemblyProductAttribute("WannaBeeClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WannaBeeClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

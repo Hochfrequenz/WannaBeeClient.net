@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  ahbicht-backend:
-    image: ghcr.io/hochfrequenz/ahbicht-functions:v1.1.0
+  wannabee-backend:
+    image: ghcr.io/hochfrequenz/wanna.bee:v1.0.0-rc1
     environment:
       - StorageProvider=Directory
       - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true

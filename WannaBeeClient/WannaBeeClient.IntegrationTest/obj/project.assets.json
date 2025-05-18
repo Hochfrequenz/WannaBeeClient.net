@@ -6694,11 +6694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
+      "projectUniqueName": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
       "projectName": "WannaBeeClient.IntegrationTest",
-      "projectPath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
+      "projectPath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
       "packagesPath": "C:\\Users\\KleinKonstantin\\.nuget\\packages\\",
-      "outputPath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient.IntegrationTest\\obj\\",
+      "outputPath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient.IntegrationTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KleinKonstantin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6713,8 +6713,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj": {
-              "projectPath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj"
+            "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj": {
+              "projectPath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj"
             }
           }
         }

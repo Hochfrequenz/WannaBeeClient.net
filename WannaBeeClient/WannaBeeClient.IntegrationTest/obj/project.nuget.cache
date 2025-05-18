@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pCoMnZU04RQ=",
+  "dgSpecHash": "GFHMm7IpdAI=",
   "success": true,
-  "projectFilePath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
+  "projectFilePath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient.IntegrationTest\\WannaBeeClient.IntegrationTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KleinKonstantin\\.nuget\\packages\\awesomeassertions\\8.1.0\\awesomeassertions.8.1.0.nupkg.sha512",
     "C:\\Users\\KleinKonstantin\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",

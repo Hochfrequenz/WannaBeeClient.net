@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj": {}
+    "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj": {}
   },
   "projects": {
-    "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj": {
+    "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj",
+        "projectUniqueName": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj",
         "projectName": "WannaBeeClient",
-        "projectPath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\WannaBeeClient.csproj",
+        "projectPath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\WannaBeeClient.csproj",
         "packagesPath": "C:\\Users\\KleinKonstantin\\.nuget\\packages\\",
-        "outputPath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClient\\obj\\",
+        "outputPath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClient\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [

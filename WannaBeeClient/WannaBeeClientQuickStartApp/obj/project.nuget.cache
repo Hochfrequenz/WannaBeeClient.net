@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RSt46eMXDyY=",
+  "dgSpecHash": "W5ieZ3d5nq4=",
   "success": true,
-  "projectFilePath": "C:\\github\\WannaBeeClient.net\\AhbichtClient\\WannaBeeClientQuickStartApp\\WannaBeeClientQuickStartApp.csproj",
+  "projectFilePath": "C:\\github\\WannaBeeClient.net\\WannaBeeClient\\WannaBeeClientQuickStartApp\\WannaBeeClientQuickStartApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KleinKonstantin\\.nuget\\packages\\edilibrary.core\\2.1.1\\edilibrary.core.2.1.1.nupkg.sha512",
     "C:\\Users\\KleinKonstantin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
