@@ -6,3 +6,17 @@
 *.cache
 
 *.exe
+
+WannaBeeClient/WannaBeeClientQuickStartApp/obj/
+
+WannaBeeClient/WannaBeeClient/obj/
+
+WannaBeeClient/WannaBeeClient.IntegrationTest/obj/
+
+WannaBeeClient/WannaBeeClient/bin/Debug/net8.0/
+
+WannaBeeClient/WannaBeeClient.IntegrationTest/bin/Debug/net9.0/
+
+WannaBeeClient/WannaBeeClient/bin/Debug/net9.0/
+
+WannaBeeClient/WannaBeeClientQuickStartApp/bin/Debug/net9.0/
