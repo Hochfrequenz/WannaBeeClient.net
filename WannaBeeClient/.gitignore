@@ -1,9 +1,9 @@
 AhbichtClient/obj
 AhbichtClient/bin
-AhbichtClient.IntegrationTest/obj
-AhbichtClient.IntegrationTest/bin
-AhbichtClient.UnitTest/obj
-AhbichtClient.UnitTest/bin
+WannaBeeClient.IntegrationTest/obj
+WannaBeeClient.IntegrationTest/bin
+WannaBeeClient.UnitTest/obj
+WannaBeeClient.UnitTest/bin
 AhbichtClientQuickStartApp/obj
 AhbichtClientQuickStartApp/bin
 ExampleAspNetCoreApplication/obj

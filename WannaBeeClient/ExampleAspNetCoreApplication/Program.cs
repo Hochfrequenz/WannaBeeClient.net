@@ -25,7 +25,7 @@ app.MapGet(
     "/extractKeys",
     async (ICategorizedKeyExtractor ahbichtClient) =>
     {
-        var cke = await ahbichtClient.ExtractKeys("Muss ([1] U [2] X [4])[951]");
+        var cke = await WannaBeeClient.ExtractKeys("Muss ([1] U [2] X [4])[951]");
         // this is pointless, but it shows how you can use the client
         return "Folgende Bedingungen müssen angegeben werden: "
             + string.Join(", ", cke.RequirementConstraintKeys);

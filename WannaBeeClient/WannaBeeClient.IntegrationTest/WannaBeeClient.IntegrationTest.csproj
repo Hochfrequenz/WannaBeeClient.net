@@ -7,7 +7,7 @@
     <PackageId>WannaBeeClient.IntegrationTest</PackageId>
     <LangVersion>default</LangVersion>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>AhbichtClient.IntegrationTest</RootNamespace>
+    <RootNamespace>WannaBeeClient.IntegrationTest</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AwesomeAssertions" Version="8.1.0" />
