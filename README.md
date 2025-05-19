@@ -22,7 +22,7 @@ dotnet add package WannaBeeClient
 We prepared minimal working examples for you to get started quickly:
 
 * For ASP.NET checkout the [`ExampleAspNetCoreApplication`](WannaBeeClient/ExampleAspNetCoreApplication/Program.cs) project.
-* For regular C# project checkout the [`WannaBeeClientQuickStartApp`](WannaBeeClientQuickStartApp/Program.cs) project.
+* For regular C# project checkout the [`WannaBeeClientQuickStartApp`](WannaBeeClient/WannaBeeClientQuickStartApp/Program.cs) project.
 
 ## How to use this library (Detailed)
 
