@@ -50,6 +50,8 @@ jobs:
           tagRegex: "v(\\d+\\.\\d+\\.\\d+)"
       - name: copy README.md to package folder
         run: cp README.md WannaBeeClient/WannaBeeClient/README.md
+      - name: copy LICENSE to package folder
+        run: cp LICENSE WannaBeeClient/WannaBeeClient/LICENSE
       - name: Build/Check for compile errors (dotnet build)
         working-directory: "WannaBeeClient"
         run: dotnet build --configuration Release
