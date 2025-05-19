@@ -3,7 +3,7 @@ using WannaBeeClient;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 
-builder.Services.AddTransient<IAhbichtAuthenticator, NoAuthenticator>(); // Or you could use ClientIdClientSecretAuthenticator
+builder.Services.AddTransient<IWannaBeeAuthenticator, NoAuthenticator>(); // Or you could use ClientIdClientSecretAuthenticator
 builder.Services.AddHttpClient(
     "WannaBeeClient",
     client =>
@@ -13,10 +13,10 @@ builder.Services.AddHttpClient(
 );
 
 // you're free to use ahbicht only for _some_ of the services it provides; Just inject the ones you need
-builder.Services.AddTransient<IConditionKeyToTextResolver, WannaBeeClient.AhbichtRestClient>();
-builder.Services.AddTransient<IPackageKeyToConditionResolver, WannaBeeClient.AhbichtRestClient>();
-builder.Services.AddTransient<ICategorizedKeyExtractor, WannaBeeClient.AhbichtRestClient>();
-builder.Services.AddTransient<IContentEvaluator, WannaBeeClient.AhbichtRestClient>();
+builder.Services.AddTransient<IConditionKeyToTextResolver, WannaBeeClient.WannaBeeRestClient>();
+builder.Services.AddTransient<IPackageKeyToConditionResolver, WannaBeeClient.WannaBeeRestClient>();
+builder.Services.AddTransient<ICategorizedKeyExtractor, WannaBeeClient.WannaBeeRestClient>();
+builder.Services.AddTransient<IContentEvaluator, WannaBeeClient.WannaBeeRestClient>();
 
 var app = builder.Build();
 

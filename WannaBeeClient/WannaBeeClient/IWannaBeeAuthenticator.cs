@@ -3,7 +3,7 @@ namespace WannaBeeClient;
 /// <summary>
 /// Can provide information on whether you need to authenticate against transformer.bee and how
 /// </summary>
-public interface IAhbichtAuthenticator
+public interface IWannaBeeAuthenticator
 {
     /// <summary>
     /// returns true iff the client should use authentication

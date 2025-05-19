@@ -12,7 +12,7 @@ public class ClientFixture : IClassFixture<ClientFixture>
 
     public readonly ServiceCollection ServiceCollection;
 
-    public readonly IAhbichtAuthenticator Authenticator;
+    public readonly IWannaBeeAuthenticator Authenticator;
 
     public ClientFixture()
     {

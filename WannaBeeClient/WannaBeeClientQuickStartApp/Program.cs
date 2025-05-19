@@ -1,6 +1,6 @@
+using EDILibrary;
 using WannaBeeClient;
 using WannaBeeClient.Model;
-using EDILibrary;
 
 namespace WannaBeeClientQuickStartApp;
 
@@ -16,7 +16,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        var client = new AhbichtRestClient(new MyHttpClientFactory(), new NoAuthenticator());
+        var client = new WannaBeeRestClient(new MyHttpClientFactory(), new NoAuthenticator());
         var packageMapping = await client.ResolvePackage(
             "10P",
             EdifactFormat.UTILMD,

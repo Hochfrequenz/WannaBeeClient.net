@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>default</LangVersion>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>AhbichtClientQuickStartApp</RootNamespace>
+    <RootNamespace>WannaBeeClientQuickStartApp</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\WannaBeeClient\WannaBeeClient.csproj" />

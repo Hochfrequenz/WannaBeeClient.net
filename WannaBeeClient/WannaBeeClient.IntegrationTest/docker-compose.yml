@@ -2,9 +2,6 @@ version: "3.7"
 
 services:
   wannabee-backend:
-    image: ghcr.io/hochfrequenz/wanna.bee:v1.0.0-rc1
-    environment:
-      - StorageProvider=Directory
-      - DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+    image: ghcr.io/hochfrequenz/wanna.bee:v1.0.2
     ports:
-      - ${AHBICHT_FUNCTIONS_REST_PORT:-7071}:7071
+      - ${WANNABEE_PORT:-7071}:8000

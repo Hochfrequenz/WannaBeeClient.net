@@ -10,7 +10,7 @@ namespace WannaBeeClient.IntegrationTest;
 public class ConnectionTests : IClassFixture<ClientFixture>
 {
     private readonly ClientFixture _client;
-    private readonly IAhbichtAuthenticator _authenticator;
+    private readonly IWannaBeeAuthenticator _authenticator;
 
     public ConnectionTests(ClientFixture clientFixture)
     {
@@ -22,7 +22,7 @@ public class ConnectionTests : IClassFixture<ClientFixture>
     public async Task IsAvailable_Returns_True_If_Service_Is_Available()
     {
         var httpClientFactory = _client.HttpClientFactory;
-        var client = new AhbichtRestClient(httpClientFactory, _authenticator);
+        var client = new WannaBeeRestClient(httpClientFactory, _authenticator);
         var result = await client.IsAvailable();
         result.Should().BeTrue();
     }
@@ -39,7 +39,7 @@ public class ConnectionTests : IClassFixture<ClientFixture>
             }
         );
         var serviceProvider = services.BuildServiceProvider();
-        var client = new AhbichtRestClient(
+        var client = new WannaBeeRestClient(
             serviceProvider.GetService<IHttpClientFactory>()!,
             _authenticator
         );

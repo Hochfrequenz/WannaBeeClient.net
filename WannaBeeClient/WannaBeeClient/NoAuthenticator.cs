@@ -1,9 +1,9 @@
 namespace WannaBeeClient;
 
 /// <summary>
-/// a <see cref="IAhbichtAuthenticator"/> stub that just indicates, we don't need to authenticate against transformer.bee, because we're e.g. in the same network
+/// a <see cref="IWannaBeeAuthenticator"/> stub that just indicates, we don't need to authenticate against wanna.bee, because we're e.g. in the same network
 /// </summary>
-public class NoAuthenticator : IAhbichtAuthenticator
+public class NoAuthenticator : IWannaBeeAuthenticator
 {
     public bool UseAuthentication() => false;
 
