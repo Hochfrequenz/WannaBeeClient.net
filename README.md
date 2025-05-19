@@ -21,7 +21,7 @@ dotnet add package WannaBeeClient
 ## How to use this library (Quickstart with public backend)
 We prepared minimal working examples for you to get started quickly:
 
-* For ASP.NET checkout the [`ExampleAspNetCoreApplication`](AhbichtClient/ExampleAspNetCoreApplication/Program.cs) project.
+* For ASP.NET checkout the [`ExampleAspNetCoreApplication`](WannaBeeClient/ExampleAspNetCoreApplication/Program.cs) project.
 * For regular C# project checkout the [`WannaBeeClientQuickStartApp`](WannaBeeClientQuickStartApp/Program.cs) project.
 
 ## How to use this library (Detailed)
