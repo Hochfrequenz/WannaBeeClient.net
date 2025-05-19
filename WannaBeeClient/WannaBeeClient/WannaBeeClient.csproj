@@ -8,6 +8,9 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <RootNamespace>WannaBeeClient</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <!-- copied to here from repo root during the release github action -->
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
