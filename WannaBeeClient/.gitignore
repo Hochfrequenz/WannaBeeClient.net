@@ -1,0 +1,12 @@
+AhbichtClient/obj
+AhbichtClient/bin
+WannaBeeClient.IntegrationTest/obj
+WannaBeeClient.IntegrationTest/bin
+WannaBeeClient.UnitTest/obj
+WannaBeeClient.UnitTest/bin
+AhbichtClientQuickStartApp/obj
+AhbichtClientQuickStartApp/bin
+ExampleAspNetCoreApplication/obj
+ExampleAspNetCoreApplication/bin
+ExampleAspNetCoreApplication.Test/obj
+ExampleAspNetCoreApplication.Test/bin

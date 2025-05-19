@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>default</LangVersion>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>WannaBeeClientQuickStartApp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WannaBeeClient\WannaBeeClient.csproj" />
+  </ItemGroup>
+</Project>

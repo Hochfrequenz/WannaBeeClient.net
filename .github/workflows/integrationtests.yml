@@ -29,34 +29,34 @@ jobs:
         # 3) Select the following scopes: read:packages
         # GHCR_USR is the username for the Github Container Registry; it has to match the PAT and is the username of the Github account that created the PAT
         # You can update the tokens in the repository settings:
-        # https://github.com/Hochfrequenz/AhbichtClient.net/settings/secrets/actions/GHCR_PAT
-        # https://github.com/Hochfrequenz/AhbichtClient.net/settings/secrets/actions/GHCR_USR
+        # https://github.com/Hochfrequenz/WannaBeeClient.net/settings/secrets/actions/GHCR_PAT
+        # https://github.com/Hochfrequenz/WannaBeeClient.net/settings/secrets/actions/GHCR_USR
         # Tokens will expire 2026-05-15
         run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ secrets.GHCR_USR }} --password-stdin
       - name: Start containers
-        run: docker compose -f "AhbichtClient/AhbichtClient.IntegrationTest/docker-compose.yml" up -d
+        run: docker compose -f "WannaBeeClient/WannaBeeClient.IntegrationTest/docker-compose.yml" up -d
 
       - name: Install dependencies
-        working-directory: AhbichtClient
-        run: dotnet restore AhbichtClient.sln
+        working-directory: WannaBeeClient
+        run: dotnet restore WannaBeeClient.sln
 
       - name: Build
-        working-directory: AhbichtClient
+        working-directory: WannaBeeClient
         run: dotnet build --no-restore
 
       - name: Run Integration Tests
-        working-directory: AhbichtClient/AhbichtClient.IntegrationTest
+        working-directory: WannaBeeClient/WannaBeeClient.IntegrationTest
         run: |
           dotnet test
       - name: Run Integration Tests (against real service)
-        working-directory: AhbichtClient/AhbichtClient.IntegrationTest
+        working-directory: WannaBeeClient/WannaBeeClient.IntegrationTest
         env:
           CLIENT_ID: ${{ secrets.AUTH0_TEST_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.AUTH0_TEST_CLIENT_SECRET }}
         run: |
           dotnet test --filter TestCollectionName='authenticated'
       - name: Run Integration Tests for Example Application
-        working-directory: AhbichtClient/ExampleAspNetCoreApplication.Test
+        working-directory: WannaBeeClient/ExampleAspNetCoreApplication.Test
         run: |
           dotnet build --no-restore
           dotnet test

@@ -1,24 +1,24 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Nuget Package](https://badgen.net/nuget/v/AhbichtClient)
 
-# AhbichtClient.NET
-A client to use features of the Python library [AHBicht](https://github.com/Hochfrequenz/ahbicht) in the .NET universe.
-For this library to work you need a backend, that exposes AHBicht features via a REST API.
-This backend is available on the public internet, free of charge but without warranty by Hochfrequenz (based on Azure Functions).
+# WannaBeeClient.NET
+A client to call endpoints of the Hochfrequenz Python library [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
+For this library to work you need a wanna.bee backend, with a min version v1.0.2.
+A public test environment of the wanna.bee backend is available on the public internet, without warranty by Hochfrequenz.
 But you can host it yourself like any other microservice.
-Hochfrequenz can provide you with a standalone Docker image; Contact [@JoschaMetze](https://github.com/joschametze) (`joscha.metze+ahbicht@hochfrequenz.de`).
+Hochfrequenz can provide you with a standalone Docker image; Contact [@JoschaMetze](https://github.com/joschametze) (`joscha.metze+wanna.bee@hochfrequenz.de`).
 
 ## Installation
 
-Install it from nuget [AhbichtClient](https://www.nuget.org/packages/AhbichtClient):
+Install it from nuget [WannaBeeClient](https://www.nuget.org/packages/WannaBeeClient):
 
 ```bash
-dotnet add package AhbichtClient
+dotnet add package WannaBeeClient
 ```
 
 ## How to use this library (Quickstart with public backend)
 
-https://github.com/Hochfrequenz/AhbichtClient.net/blob/b234147488d95ac773d4f3942b5b1125dd4004ba/AhbichtClient/AhbichtClientQuickStartApp/Program.cs#L1-L54
+https://github.com/Hochfrequenz/WannaBeeClient.net/blob/b234147488d95ac773d4f3942b5b1125dd4004ba/AhbichtClient/AhbichtClientQuickStartApp/Program.cs#L1-L54
 
 This prints:
 > The package '10P' is equivalent to [20] ∧ [244]
@@ -32,13 +32,13 @@ This prints:
 ## How to use this library (Detailed)
 
 ### Prerequisites / Account
-First of all, you need access to either a local instance of the backend aka [ahbicht-functions](https://github.com/Hochfrequenz/ahbicht-functions) (private repo, private docker image) or use our public API.
+First of all, you need access to either a local instance of the backend aka [ahbicht-functions](https://github.com/Hochfrequenz/wanna.bee) (private repo, private docker image) or use our public API.
 
 #### Local Instance
-If you have access to our docker image, check out the [docker-compose.yml](AhbichtClient/AhbichtClient.IntegrationTest/docker-compose.yml) from the integration tests to pull and start the image.
+If you have access to our docker image, check out the [docker-compose.yml](WannaBeeClient/WannaBeeClient.IntegrationTest/docker-compose.yml) from the integration tests to pull and start the image.
 
 #### Public Instance
-If you're just playing around, you can use our public instance at `https://ahbicht.azurewebsites.net`.
+If you're just playing around, you can use our public instance at `https://wannastage.utilibee.io`.
 We can't guarantee uptime or performance, but it should be good enough for testing.
 
 ### Authentication
@@ -48,10 +48,10 @@ Theoretically there are two ways to authenticate, but in practice there is no au
 
 #### No Authentication
 
-If you're hosting ahbicht-function in the same network or your localhost or our public API, there is no authentication, you can use the `NoAuthenticator`.
+If you're hosting wanna.bee in the same network or your localhost or our public API, there is no authentication, you can use the `NoAuthenticator`.
 
 ```csharp
-using AhbichtClient;
+using WannaBeeClient;
 var myAuthenticator = new NoAuthenticator();
 ```
 Its name says it all 😉 - but you still need it.
@@ -60,13 +60,13 @@ Its name says it all 😉 - but you still need it.
 If, in the future, Hochfrequenz provided you with a client Id and secret, you can use the `ClientIdClientSecretAuthenticator` class like this:
 
 ```csharp
-using AhbichtClient;
+using WannaBeeClient;
 var myAuthenticator = new ClientIdClientSecretAuthenticator("YOUR_CLIENT_ID", "YOUR_CLIENT_SECRET");
 ```
 
 #### Base Address
-The `HttpClient` instance used by the `AhbichtRestClient` class has to have a `BaseAddress` set.
-Use e.g. `https://ahbicht.azurewebsites.net` for our demo system.
+The `HttpClient` instance used by the `WannaBeeRestClient` class has to have a `BaseAddress` set.
+Use e.g. `https://wannastage.utiliebee.io` for our demo system.
 
 ### Use with ASP.NET Core
 This library is thought to be  primarily used in ASP.NET Core applications.
@@ -75,12 +75,12 @@ See the [`ExampleAspNetCoreApplication/Program.cs`](AhbichtClient/ExampleAspNetC
 
 ### Use without ASP.NET Core
 If you're not using ASP.NET Core, you can still use this library but setting up th `IHttpClientFactory` comes with a bit of boilerplate.
-See the [`MweWithoutAspNetTest.cs`](AhbichtClient/AhbichtClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
+See the [`MweWithoutAspNetTest.cs`](AhbichtClient/WannaBeeClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
 
 ### Modular by Design
 All the features from above are available in the `AhbichtRestClient` class but abstracted into small distinct interfaces:
 
-https://github.com/Hochfrequenz/AhbichtClient.net/blob/b30b2aeb53ed98f03a1a69f7d7c2de8d6489a5c1/AhbichtClient/AhbichtClient/AhbichtRestClient.cs#L15
+https://github.com/Hochfrequenz/WannaBeeClient.net/blob/b30b2aeb53ed98f03a1a69f7d7c2de8d6489a5c1/AhbichtClient/AhbichtClient/AhbichtRestClient.cs#L15
 
 This allows you to freely integrate AHBicht with your own software.
 You could for example implement parts of the logic AHBicht provides on your own (e.g. package/condition resolution).
@@ -100,7 +100,7 @@ then paste your PAT similarly to described in the [integration test CI pipeline]
 
 ### Release (CI/CD)
 
-To release a new version of this library, [create a new release](https://github.com/Hochfrequenz/AhbichtClient.net/releases/new) in GitHub.
+To release a new version of this library, [create a new release](https://github.com/Hochfrequenz/WannaBeeClient.net/releases/new) in GitHub.
 Make sure its tag starts with `v` and the version number, e.g. `v1.2.3`.
 Tags without a release won't trigger the release workflow; This enforces that you have to write a changelog before releasing.
 Releases are not restricted to the main branch, but we prefer them to happen there.

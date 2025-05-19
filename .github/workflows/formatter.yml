@@ -19,5 +19,5 @@ jobs:
         run: |
           dotnet tool restore
       - name: Run dotnet-format
-        working-directory: ./AhbichtClient
+        working-directory: ./WannaBeeClient
         run: dotnet csharpier check .

@@ -20,17 +20,17 @@ jobs:
         # 3) Select the following scopes: read:packages
         # GHCR_USR is the username for the Github Container Registry; it has to match the PAT and is the username of the Github account that created the PAT
         # You can update the tokens in the repository settings:
-        # https://github.com/Hochfrequenz/AhbichtClient/settings/secrets/actions/GHCR_PAT
-        # https://github.com/Hochfrequenz/AhbichtClient/settings/secrets/actions/GHCR_USR
+        # https://github.com/Hochfrequenz/WannaBeeClient/settings/secrets/actions/GHCR_PAT
+        # https://github.com/Hochfrequenz/WannaBeeClient/settings/secrets/actions/GHCR_USR
         # Tokens will expire 2025-07-01
         run: echo "${{ secrets.GHCR_PAT }}" | docker login ghcr.io -u ${{ secrets.GHCR_USR }} --password-stdin
       - name: Start containers
-        run: docker compose -f "AhbichtClient/AhbichtClient.IntegrationTest/docker-compose.yml" up -d
+        run: docker compose -f "WannaBeeClient/WannaBeeClient.IntegrationTest/docker-compose.yml" up -d
       - name: Build/Check for compile errors (dotnet build)
-        working-directory: "AhbichtClient"
+        working-directory: "WannaBeeClient"
         run: dotnet build --configuration Release
       - name: Run Unit Tests (dotnet test) # never ever release with failing tests!
-        working-directory: "AhbichtClient"
+        working-directory: "WannaBeeClient"
         run: dotnet test --configuration Release
   push_release:
     needs: run_tests
@@ -49,16 +49,16 @@ jobs:
         with:
           tagRegex: "v(\\d+\\.\\d+\\.\\d+)"
       - name: Build/Check for compile errors (dotnet build)
-        working-directory: "AhbichtClient"
+        working-directory: "WannaBeeClient"
         run: dotnet build --configuration Release
-      - name: Create Package AhbichtClient (dotnet pack)
-        working-directory: "AhbichtClient/AhbichtClient"
-        run: dotnet pack AhbichtClient.csproj --configuration Release -p:PackageVersion="${{ steps.tagTBC.outputs.tag }}"
+      - name: Create Package WannaBeeClient (dotnet pack)
+        working-directory: "WannaBeeClient/WannaBeeClient"
+        run: dotnet pack WannaBeeClient.csproj --configuration Release -p:PackageVersion="${{ steps.tagTBC.outputs.tag }}"
       - name: Setup Nuget.exe
         uses: warrenbuckley/Setup-Nuget@v1
-      - name: Nuget push AhbichtClient
-        working-directory: "AhbichtClient/AhbichtClient"
-        # token: https://github.com/Hochfrequenz/AhbichtClient.net/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
+      - name: Nuget push WannaBeeClient
+        working-directory: "WannaBeeClient/WannaBeeClient"
+        # token: https://github.com/Hochfrequenz/WannaBeeClient.net/settings/secrets/actions/NUGET_ORG_PUSH_TOKEN
         # expires 2025-07-17; token is owned by konstantin as of now.
         run: |
           nuget setApiKey ${{ secrets.NUGET_ORG_PUSH_TOKEN }}
