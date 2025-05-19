@@ -3,6 +3,8 @@
 
 # WannaBeeClient.NET
 A client to call endpoints of the Hochfrequenz application [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
+It provides you with a clean interface and strong, null-safe typing.
+
 For this library to work you need a wanna.bee backend, with a min version v1.0.2.
 A public test environment of the wanna.bee backend is available on the public internet, without warranty by Hochfrequenz.
 But you can host it yourself like any other microservice.
@@ -25,7 +27,7 @@ We prepared minimal working examples for you to get started quickly:
 ## How to use this library (Detailed)
 
 ### Prerequisites / Account
-First of all, you need access to either a local instance of the backend aka [ahbicht-functions](https://github.com/Hochfrequenz/wanna.bee) (private repo, private docker image) or use our public API.
+First of all, you need access to either a local instance of the [wanna.bee backend](https://github.com/Hochfrequenz/wanna.bee) (private repo, private docker image) or use our public API.
 
 #### Local Instance
 If you have access to our docker image, check out the [docker-compose.yml](WannaBeeClient/WannaBeeClient.IntegrationTest/docker-compose.yml) from the integration tests to pull and start the image.
@@ -36,7 +38,7 @@ We can't guarantee uptime or performance, but it should be good enough for testi
 
 ### Authentication
 
-You need to provide something that implements `IAhbichtAuthenticator` to the `AhbichtClient`.
+You need to provide something that implements `IWannaBeeAuthenticator` to the `WannaBeeClient`.
 Theoretically there are two ways to authenticate, but in practice there is no authentication as of today.
 
 #### No Authentication
@@ -64,11 +66,11 @@ Use e.g. `https://wannastage.utiliebee.io` for our demo system.
 ### Use with ASP.NET Core
 This library is thought to be  primarily used in ASP.NET Core applications.
 That's why it assumes that you have an `IHttpClientFactory` available in your dependency injection container.
-See the [`ExampleAspNetCoreApplication/Program.cs`](AhbichtClient/ExampleAspNetCoreApplication/Program.cs) for a minimal working example.
+See the [`ExampleAspNetCoreApplication/Program.cs`](WannaBeeClient/ExampleAspNetCoreApplication/Program.cs) for a minimal working example.
 
 ### Use without ASP.NET Core
 If you're not using ASP.NET Core, you can still use this library but setting up th `IHttpClientFactory` comes with a bit of boilerplate.
-See the [`MweWithoutAspNetTest.cs`](AhbichtClient/WannaBeeClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
+See the [`MweWithoutAspNetTest.cs`](WannaBeeClient/WannaBeeClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
 
 ### Modular by Design
 All the features from above are available in the `WannaBeeRestClient` class but abstracted a small interface:
