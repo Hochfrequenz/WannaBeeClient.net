@@ -2,7 +2,7 @@
 ![Nuget Package](https://badgen.net/nuget/v/WannaBeeClient)
 
 # WannaBeeClient.NET
-A client to call endpoints of the Hochfrequenz Python library [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
+A client to call endpoints of the Hochfrequenz application [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
 For this library to work you need a wanna.bee backend, with a min version v1.0.2.
 A public test environment of the wanna.bee backend is available on the public internet, without warranty by Hochfrequenz.
 But you can host it yourself like any other microservice.
