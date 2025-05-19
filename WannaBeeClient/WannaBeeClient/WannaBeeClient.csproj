@@ -8,6 +8,8 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <RootNamespace>WannaBeeClient</RootNamespace>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <licenseUrl>file://LICENSE</licenseUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -17,5 +19,10 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.4" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.4.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- copied to here from repo root during the release github action -->
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
