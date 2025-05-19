@@ -1,4 +1,5 @@
-<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AWebApplicationFactory_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FUsers_003FKleinKonstantin_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003F255f916e5a2d424ef01b291afc761e049b367614440bf4b216824ec479064b_003FWebApplicationFactory_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=20469907_002Dafdb_002D49f1_002D83fd_002D8eb6c2bc13a9/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test_That_Setup_Works_As_Designed" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::39992205-201D-445B-A58D-BB098F5EFC1D::net9.0::ExampleAspNetCoreApplication.Test.ApplicationTest.Test_That_Setup_Works_As_Designed&lt;/TestId&gt;&#xD;
@@ -12,6 +13,7 @@
     &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ConnectionTests.IsAvailable_Returns_True_If_Service_Is_Available&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ValidationTests.Successful_Validations_Work_As_Expected&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ValidationTests.Errornous_Validations_Work_As_Expected&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39992205-201D-445B-A58D-BB098F5EFC1D::net9.0::ExampleAspNetCoreApplication.Test.ApplicationTest.Test_That_Setup_Works_As_Designed&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	

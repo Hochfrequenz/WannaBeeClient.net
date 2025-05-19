@@ -17,9 +17,9 @@ public class ApplicationTest : IClassFixture<WebApplicationFactory<Program>>
     public async Task Test_That_Setup_Works_As_Designed()
     {
         var client = Factory.CreateDefaultClient();
-        var response = await client.GetAsync("/extractKeys");
+        var response = await client.GetAsync("/validate");
         response.StatusCode.Should().Be(HttpStatusCode.OK);
         var content = await response.Content.ReadAsStringAsync();
-        content.Should().Be("Folgende Bedingungen müssen angegeben werden: 1, 2, 4");
+        content.Should().Contain(""""Status":"Negative","Message":"boooh"""");
     }
 }

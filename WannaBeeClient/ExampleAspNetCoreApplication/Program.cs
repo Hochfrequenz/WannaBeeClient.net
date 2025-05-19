@@ -9,7 +9,7 @@ builder.Services.AddHttpClient(
     "WannaBeeClient",
     client =>
     {
-        client.BaseAddress = new Uri("https://wannastage.utilibee.io/"); // or https://wannastage.utilibee.io/
+        client.BaseAddress = new Uri("http://localhost:7071/"); // or https://wannastage.utilibee.io/
     }
 );
 
@@ -23,6 +23,7 @@ app.MapGet(
     "/validate",
     async (IEdifactAhbValidator wannabeeClient) =>
     {
+        // IRL you'd of course not hardcode the message but get it from a request
         const string invalidMessage = """
 UNB+UNOC:3+9910902000001:500+9900269000000:500+241204:0617+ALEXANDE121116'
 UNH+ALEXANDE846768+UTILMD:D:11A:UN:S1.1'
