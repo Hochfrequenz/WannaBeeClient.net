@@ -61,7 +61,7 @@ var myAuthenticator = new ClientIdClientSecretAuthenticator("YOUR_CLIENT_ID", "Y
 
 #### Base Address
 The `HttpClient` instance used by the `WannaBeeRestClient` class has to have a `BaseAddress` set.
-Use e.g. `https://wannastage.utiliebee.io` for our demo system.
+Use e.g. `https://wannastage.utilibee.io` for our demo system.
 
 ### Use with ASP.NET Core
 This library is thought to be  primarily used in ASP.NET Core applications.
