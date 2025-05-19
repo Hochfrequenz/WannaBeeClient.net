@@ -31,7 +31,7 @@ UNT+20+ALEXANDE846768'
 UNZ+1+ALEXANDE121116'
 """;
 
-    private const string Invalid44042 = // Wrong STS
+    private const string Invalid44042 = // Wrong STS value 'Hallo'
         """
 UNB+UNOC:3+9910902000001:500+9900269000000:500+241204:0617+ALEXANDE121116'
 UNH+ALEXANDE846768+UTILMD:D:11A:UN:S1.1'
@@ -84,6 +84,11 @@ UNZ+1+ALEXANDE121116'
         var actual = await client.Validate(
             new ValidateEdifactRequest(Edifact: Invalid44042, IncludeBoneycombPaths: false)
         );
-        actual.Should().BeAssignableTo<NegativeValidationResponse>();
+        actual
+            .Should()
+            .BeAssignableTo<NegativeValidationResponse>()
+            .And.Subject.As<NegativeValidationResponse>()
+            .Errors.Should()
+            .HaveCount(((NegativeValidationResponse)actual).NumErrors);
     }
 }

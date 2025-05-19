@@ -25,7 +25,7 @@ public record ValidateEdifactRequest(
 );
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "valid")]
-// [JsonDerivedType(typeof(PositiveValidationResponse), true)] <-- doesn't work yet, we're using a workaround
+// [JsonDerivedType(typeof(PositiveValidationResponse), true)] <-- using booleans as type discriminators doesn't work yet, we're using a workaround (STRG+F record TrueFalseValid)
 // [JsonDerivedType(typeof(NegativeValidationResponse), false)]
 public abstract record ValidationResponse { };
 
@@ -39,7 +39,7 @@ public record NegativeValidationResponse(
 ) : ValidationResponse { }
 
 // Error Models
-[JsonPolymorphic(TypeDiscriminatorPropertyName = "type")]
+[JsonPolymorphic(TypeDiscriminatorPropertyName = "type")] // <-- this only works if the 'type' value is the FIRST KVP inside the dictionary returned by the API
 [JsonDerivedType(typeof(ForbiddenButFilledError), "ForbiddenButFilledError")]
 [JsonDerivedType(typeof(FormatConstraintUnfulfilledError), "FormatConstraintUnfulfilledError")]
 [JsonDerivedType(typeof(IllegalCodeError), "IllegalCodeError")]
