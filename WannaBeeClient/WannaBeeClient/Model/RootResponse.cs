@@ -1,4 +1,4 @@
-﻿namespace WannaBeeClient.Model;
+namespace WannaBeeClient.Model;
 
 using System.Text.Json.Serialization;
 
