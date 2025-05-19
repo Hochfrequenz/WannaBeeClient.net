@@ -1,4 +1,3 @@
-using EDILibrary;
 using WannaBeeClient;
 using WannaBeeClient.Model;
 
@@ -8,7 +7,7 @@ public class MyHttpClientFactory : IHttpClientFactory
 {
     public HttpClient CreateClient(string name)
     {
-        return new HttpClient { BaseAddress = new Uri("http://ahbicht.azurewebsites.net") };
+        return new HttpClient { BaseAddress = new Uri("https://wannastage.utilibee.io") };
     }
 }
 
@@ -17,47 +16,33 @@ class Program
     static async Task Main(string[] args)
     {
         var client = new WannaBeeRestClient(new MyHttpClientFactory(), new NoAuthenticator());
-        var packageMapping = await client.ResolvePackage(
-            "10P",
-            EdifactFormat.UTILMD,
-            EdifactFormatVersion.FV2404
-        );
-        Console.WriteLine($"The package '10P' is equivalent to {packageMapping.PackageExpression}");
-        var conditionMapping = await client.ResolveCondition(
-            "244",
-            EdifactFormat.UTILMD,
-            EdifactFormatVersion.FV2404
-        );
-        Console.WriteLine($"where '[244]' refers to '{conditionMapping.ConditionText}'");
 
-        const string expression = "Muss ([1] O [2])[951]";
-        var categorizedKeyExtract = await client.ExtractKeys(expression);
-        Console.WriteLine(
-            $"To evaluate the expression '{expression}' you need to provide values for the following keys: "
-                + string.Join(", ", categorizedKeyExtract.RequirementConstraintKeys)
-                + " and "
-                + string.Join(", ", categorizedKeyExtract.FormatConstraintKeys)
+        const string valid44042 = """
+UNB+UNOC:3+9910902000001:500+9900269000000:500+241204:0617+ALEXANDE121116'
+UNH+ALEXANDE846768+UTILMD:D:11A:UN:S1.1'
+BGM+E01+ALEXANDE846768BGM'
+DTM+137:202412040617?+00:303'
+NAD+MS+9910902000001::293'
+NAD+MR+9900269000000::293'
+IDE+24+ALEXANDE307337741'
+DTM+76:202412162300?+00:303'
+STS+7++E03'
+AGR+9:Z04'
+LOC+Z16+58397694242'
+LOC+Z17+DE69617355664H850VEVXMWUXGZ1R0MKP'
+RFF+Z13:55042'
+NAD+Z07+++Muster:Max:::Herr:Z01'
+NAD+Z08+++Muster:Max:::Herr:Z01+Am Ihmeufer::201+Hannover++30149+DE'
+NAD+Z05+++Muster:Max:::Herr:Z01+Am Ihmeufer::201+Hannover++30149+DE'
+RFF+Z19:DE69617355664H850VEVXMWUXGZ1R0MKP'
+UNT+20+ALEXANDE846768'
+UNZ+1+ALEXANDE121116'
+""";
+        var validationResponse = await client.Validate(
+            new ValidateEdifactRequest(Edifact: valid44042, IncludeBoneycombPaths: false)
         );
-
-        var myResults = new ContentEvaluationResult
-        {
-            Hints = new Dictionary<string, string?>(),
-            FormatConstraints = new Dictionary<string, EvaluatedFormatConstraint>
-            {
-                {
-                    "951",
-                    new EvaluatedFormatConstraint { FormatConstraintFulfilled = true }
-                },
-            },
-            RequirementConstraints = new Dictionary<string, ConditionFulfilledValue>()
-            {
-                { "1", ConditionFulfilledValue.Fulfilled },
-                { "2", ConditionFulfilledValue.Unfulfilled },
-            },
-        };
-        var evaluationResult = await client.Evaluate(expression, myResults);
         Console.WriteLine(
-            $"The expression '{expression}' is evaluated to: {evaluationResult.RequirementConstraintEvaluationResult.RequirementConstraintsFulfilled}"
+            $"The edifact '{valid44042[..20]}...' is {((validationResponse is PositiveValidationResponse) ? "valid" : "invalid")}"
         );
     }
 }

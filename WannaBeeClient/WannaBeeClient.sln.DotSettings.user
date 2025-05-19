@@ -9,7 +9,7 @@
 &lt;/SessionState&gt;</s:String>
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ae9500eb_002Dc8d5_002D4fd1_002Da306_002Db8c26602b57a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsAvailable_Throws_Exception_If_Host_Is_Unavailable" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFile&gt;77598126-7BB0-4C07-BF06-331033E0DE78/f:ValidationTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;Project Location="C:\github\WannaBeeClient.net\WannaBeeClient\WannaBeeClient.IntegrationTest" Presentation="&amp;lt;WannaBeeClient.IntegrationTest&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6484ef14_002Dc2fe_002D497a_002Db425_002Db46d160ac22d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Keys_Can_Be_Extracted" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;

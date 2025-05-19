@@ -2,18 +2,18 @@
 ![Nuget Package](https://badgen.net/nuget/v/AhbichtClient)
 
 # WannaBeeClient.NET
-A client to use features of the Python library [AHBicht](https://github.com/Hochfrequenz/ahbicht) in the .NET universe.
-For this library to work you need a backend, that exposes AHBicht features via a REST API.
-This backend is available on the public internet, free of charge but without warranty by Hochfrequenz (based on Azure Functions).
+A client to call endpoints of the Hochfrequenz Python library [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
+For this library to work you need a wanna.bee backend, with a min version v1.0.2.
+A public test environment of the wanna.bee backend is available on the public internet, without warranty by Hochfrequenz.
 But you can host it yourself like any other microservice.
-Hochfrequenz can provide you with a standalone Docker image; Contact [@JoschaMetze](https://github.com/joschametze) (`joscha.metze+ahbicht@hochfrequenz.de`).
+Hochfrequenz can provide you with a standalone Docker image; Contact [@JoschaMetze](https://github.com/joschametze) (`joscha.metze+wanna.bee@hochfrequenz.de`).
 
 ## Installation
 
-Install it from nuget [AhbichtClient](https://www.nuget.org/packages/AhbichtClient):
+Install it from nuget [WannaBeeClient](https://www.nuget.org/packages/WannaBeeClient):
 
 ```bash
-dotnet add package AhbichtClient
+dotnet add package WannaBeeClient
 ```
 
 ## How to use this library (Quickstart with public backend)
@@ -32,13 +32,13 @@ This prints:
 ## How to use this library (Detailed)
 
 ### Prerequisites / Account
-First of all, you need access to either a local instance of the backend aka [ahbicht-functions](https://github.com/Hochfrequenz/ahbicht-functions) (private repo, private docker image) or use our public API.
+First of all, you need access to either a local instance of the backend aka [ahbicht-functions](https://github.com/Hochfrequenz/wanna.bee) (private repo, private docker image) or use our public API.
 
 #### Local Instance
-If you have access to our docker image, check out the [docker-compose.yml](AhbichtClient/WannaBeeClient.IntegrationTest/docker-compose.yml) from the integration tests to pull and start the image.
+If you have access to our docker image, check out the [docker-compose.yml](WannaBeeClient/WannaBeeClient.IntegrationTest/docker-compose.yml) from the integration tests to pull and start the image.
 
 #### Public Instance
-If you're just playing around, you can use our public instance at `https://ahbicht.azurewebsites.net`.
+If you're just playing around, you can use our public instance at `https://wannastage.utilibee.io`.
 We can't guarantee uptime or performance, but it should be good enough for testing.
 
 ### Authentication
@@ -48,7 +48,7 @@ Theoretically there are two ways to authenticate, but in practice there is no au
 
 #### No Authentication
 
-If you're hosting ahbicht-function in the same network or your localhost or our public API, there is no authentication, you can use the `NoAuthenticator`.
+If you're hosting wanna.bee in the same network or your localhost or our public API, there is no authentication, you can use the `NoAuthenticator`.
 
 ```csharp
 using WannaBeeClient;
@@ -65,8 +65,8 @@ var myAuthenticator = new ClientIdClientSecretAuthenticator("YOUR_CLIENT_ID", "Y
 ```
 
 #### Base Address
-The `HttpClient` instance used by the `AhbichtRestClient` class has to have a `BaseAddress` set.
-Use e.g. `https://ahbicht.azurewebsites.net` for our demo system.
+The `HttpClient` instance used by the `WannaBeeRestClient` class has to have a `BaseAddress` set.
+Use e.g. `https://wannastage.utiliebee.io` for our demo system.
 
 ### Use with ASP.NET Core
 This library is thought to be  primarily used in ASP.NET Core applications.

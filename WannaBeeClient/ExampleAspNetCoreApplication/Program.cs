@@ -1,4 +1,5 @@
 using WannaBeeClient;
+using WannaBeeClient.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
@@ -8,27 +9,62 @@ builder.Services.AddHttpClient(
     "WannaBeeClient",
     client =>
     {
-        client.BaseAddress = new Uri("http://localhost:7071/"); // or https://ahbicht.azurewebsites.net/
+        client.BaseAddress = new Uri("https://wannastage.utilibee.io/"); // or https://wannastage.utilibee.io/
     }
 );
 
-// you're free to use ahbicht only for _some_ of the services it provides; Just inject the ones you need
-builder.Services.AddTransient<IConditionKeyToTextResolver, WannaBeeClient.WannaBeeRestClient>();
-builder.Services.AddTransient<IPackageKeyToConditionResolver, WannaBeeClient.WannaBeeRestClient>();
-builder.Services.AddTransient<ICategorizedKeyExtractor, WannaBeeClient.WannaBeeRestClient>();
-builder.Services.AddTransient<IContentEvaluator, WannaBeeClient.WannaBeeRestClient>();
+// you can inject a mock if necessary
+builder.Services.AddTransient<IEdifactAhbValidator, WannaBeeRestClient>();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "I ❤ AHBicht");
+app.MapGet("/", () => "I ❤ wanna.bee");
 app.MapGet(
-    "/extractKeys",
-    async (ICategorizedKeyExtractor ahbichtClient) =>
+    "/validate",
+    async (IEdifactAhbValidator wannabeeClient) =>
     {
-        var cke = await WannaBeeClient.ExtractKeys("Muss ([1] U [2] X [4])[951]");
-        // this is pointless, but it shows how you can use the client
-        return "Folgende Bedingungen müssen angegeben werden: "
-            + string.Join(", ", cke.RequirementConstraintKeys);
+        const string invalidMessage = """
+UNB+UNOC:3+9910902000001:500+9900269000000:500+241204:0617+ALEXANDE121116'
+UNH+ALEXANDE846768+UTILMD:D:11A:UN:S1.1'
+BGM+E01+ALEXANDE846768BGM'
+DTM+137:202412040617?+00:303'
+NAD+MS+9910902000001::293'
+NAD+MR+9900269000000::293'
+IDE+24+ALEXANDE307337741'
+DTM+76:202412162300?+00:303'
+STS+7++DAS HIER IST AUF KEINEN FALL valide'
+AGR+9:Z04'
+LOC+Z16+58397694242'
+LOC+Z17+DE69617355664H850VEVXMWUXGZ1R0MKP'
+RFF+Z13:55042'
+NAD+Z07+++Muster:Max:::Herr:Z01'
+NAD+Z08+++Muster:Max:::Herr:Z01+Am Ihmeufer::201+Hannover++30149+DE'
+NAD+Z05+++Muster:Max:::Herr:Z01+Am Ihmeufer::201+Hannover++30149+DE'
+RFF+Z19:DE69617355664H850VEVXMWUXGZ1R0MKP'
+UNT+20+ALEXANDE846768'
+UNZ+1+ALEXANDE121116'
+""";
+        var validationResponse = await wannabeeClient.Validate(
+            new ValidateEdifactRequest(Edifact: invalidMessage, IncludeBoneycombPaths: false)
+        );
+        return validationResponse switch
+        {
+            PositiveValidationResponse _ => new Dictionary<string, string>
+            {
+                { "Status", "Positive" },
+                { "Message", "hurray" },
+            },
+            NegativeValidationResponse negativeValidationResponse => new Dictionary<string, string>
+            {
+                { "Status", "Negative" },
+                { "Message", "boooh" },
+                {
+                    "Details",
+                    string.Join(", ", negativeValidationResponse.Errors.Select(x => x.Description))
+                },
+            },
+            _ => throw new NotFiniteNumberException("Unknown validation response"),
+        };
     }
 );
 app.Run();

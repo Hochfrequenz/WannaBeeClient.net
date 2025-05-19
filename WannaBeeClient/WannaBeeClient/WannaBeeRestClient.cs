@@ -119,7 +119,7 @@ public class WannaBeeRestClient : IEdifactAhbValidator
             );
         }
 
-        var uriBuilder = new UriBuilder(_httpClient!.BaseAddress!) { Path = "/api/v1/validate" };
+        var uriBuilder = new UriBuilder(_httpClient!.BaseAddress!) { Path = "/api/v1/validate/" };
 
         var convertUrl = uriBuilder.Uri.AbsoluteUri;
         await EnsureAuthentication();

@@ -63,26 +63,36 @@ UNZ+1+ALEXANDE121116'
         _authenticator = clientFixture.Authenticator;
     }
 
-    [Fact]
-    public async Task Successful_Validations_Work_As_Expected()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task Successful_Validations_Work_As_Expected(bool withBoneyCombPaths)
     {
         var httpClientFactory = _client.HttpClientFactory;
         IEdifactAhbValidator client = new WannaBeeRestClient(httpClientFactory, _authenticator);
 
         var actual = await client.Validate(
-            new ValidateEdifactRequest(Edifact: Valid44042, IncludeBoneycombPaths: false)
+            new ValidateEdifactRequest(
+                Edifact: Valid44042,
+                IncludeBoneycombPaths: withBoneyCombPaths
+            )
         );
         actual.Should().BeAssignableTo<PositiveValidationResponse>();
     }
 
-    [Fact]
-    public async Task Errornous_Validations_Work_As_Expected()
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task Errornous_Validations_Work_As_Expected(bool withBoneyCombPaths)
     {
         var httpClientFactory = _client.HttpClientFactory;
         IEdifactAhbValidator client = new WannaBeeRestClient(httpClientFactory, _authenticator);
 
         var actual = await client.Validate(
-            new ValidateEdifactRequest(Edifact: Invalid44042, IncludeBoneycombPaths: false)
+            new ValidateEdifactRequest(
+                Edifact: Invalid44042,
+                IncludeBoneycombPaths: withBoneyCombPaths
+            )
         );
         actual
             .Should()
