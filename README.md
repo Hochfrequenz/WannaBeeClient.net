@@ -70,7 +70,7 @@ See the [`ExampleAspNetCoreApplication/Program.cs`](WannaBeeClient/ExampleAspNet
 
 ### Use without ASP.NET Core
 If you're not using ASP.NET Core, you can still use this library but setting up th `IHttpClientFactory` comes with a bit of boilerplate.
-See the [`MweWithoutAspNetTest.cs`](WannaBeeClient/WannaBeeClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
+See the [`ValidationTests.cs`](WannaBeeClient/WannaBeeClient.IntegrationTest/ValidationTests.cs) for a minimal working example.
 
 ### Modular by Design
 All the features from above are available in the `WannaBeeRestClient` class but abstracted a small interface:
