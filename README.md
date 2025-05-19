@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Nuget Package](https://badgen.net/nuget/v/AhbichtClient)
+![Nuget Package](https://badgen.net/nuget/v/WannaBeeClient)
 
 # WannaBeeClient.NET
 A client to call endpoints of the Hochfrequenz Python library [wanna.bee](https://github.com/Hochfrequenz/wanna.bee) (private) in the .NET universe.
@@ -17,17 +17,10 @@ dotnet add package WannaBeeClient
 ```
 
 ## How to use this library (Quickstart with public backend)
+We prepared minimal working examples for you to get started quickly:
 
-https://github.com/Hochfrequenz/WannaBeeClient.net/blob/b234147488d95ac773d4f3942b5b1125dd4004ba/AhbichtClient/AhbichtClientQuickStartApp/Program.cs#L1-L54
-
-This prints:
-> The package '10P' is equivalent to [20] ∧ [244]
-> 
-> where '[244]' refers to 'Wenn SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) in dieser SG8 vorhanden'
-> 
-> To evaluate the expression 'Muss ([1] O [2])[951]' you need to provide values for the following keys: 1, 2 and 951
-> 
-> The expression 'Muss ([1] O [2])[951]' is evaluated to: True
+* For ASP.NET checkout the [`ExampleAspNetCoreApplication`](AhbichtClient/ExampleAspNetCoreApplication/Program.cs) project.
+* For regular C# project checkout the [`WannaBeeClientQuickStartApp`](WannaBeeClientQuickStartApp/Program.cs) project.
 
 ## How to use this library (Detailed)
 
@@ -78,19 +71,18 @@ If you're not using ASP.NET Core, you can still use this library but setting up 
 See the [`MweWithoutAspNetTest.cs`](AhbichtClient/WannaBeeClient.IntegrationTest/MweWithoutAspNetTest.cs) for a minimal working example.
 
 ### Modular by Design
-All the features from above are available in the `AhbichtRestClient` class but abstracted into small distinct interfaces:
+All the features from above are available in the `WannaBeeRestClient` class but abstracted a small interface:
 
-https://github.com/Hochfrequenz/WannaBeeClient.net/blob/b30b2aeb53ed98f03a1a69f7d7c2de8d6489a5c1/AhbichtClient/AhbichtClient/AhbichtRestClient.cs#L15
+https://github.com/Hochfrequenz/WannaBeeClient.net/blob/eda28aa46ec7eef6016b95f91d75ae8e857dd538/WannaBeeClient/WannaBeeClient/IEdifactAhbValidator.cs#L9-L15
 
-This allows you to freely integrate AHBicht with your own software.
-You could for example implement parts of the logic AHBicht provides on your own (e.g. package/condition resolution).
-Also for unit testing and mocking, these interfaces are very useful.
+This allows you to freely integrate wanna.bee with your own software.
+For unit testing and mocking, these interfaces are very useful.
 
 ## Development
 
 ### Integration Tests
 
-To run the integration test login to your docker to access the ahbicht-functions/backend image.
+To run the integration test login to your docker to access both the wanna.bee backend image as well as the edifact-bo4e-converter.
 
 ```bash
 docker login ghcr.io -u YOUR_GITHUB_USERNAME
