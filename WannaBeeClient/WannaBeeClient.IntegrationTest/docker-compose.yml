@@ -1,7 +1,16 @@
 version: "3.7"
 
 services:
+  transformer:
+    image: ghcr.io/enercity/edifact-bo4e-converter/edifactbo4econverter:v1.5.0-rc9
+    environment:
+      - StorageProvider=Directory
+    ports:
+      - ${TRANSFORMER_GRPC_PORT:-5020}:5000
+      - ${TRANSFORMER_REST_PORT:-5021}:5001
   wannabee-backend:
     image: ghcr.io/hochfrequenz/wanna.bee:v1.0.2
     ports:
       - ${WANNABEE_PORT:-7071}:8000
+    environment:
+      - TRANSFORMER_URL=http://transformer:${TRANSFORMER_REST_PORT:-5021}

@@ -11,7 +11,7 @@ using Version = WannaBeeClient.Model.Version;
 namespace WannaBeeClient;
 
 /// <summary>
-/// a client for the ahbicht-functions REST API
+/// a client for the wanna.bee REST API
 /// </summary>
 public class WannaBeeRestClient : IEdifactAhbValidator
 {
