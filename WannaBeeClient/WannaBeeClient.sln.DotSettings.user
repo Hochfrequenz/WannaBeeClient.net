@@ -7,8 +7,15 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4fa21289_002Debff_002D4c5a_002D8d89_002D3c311da32c05/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=539c47d9_002D1397_002D4d3e_002D90b3_002D6fe5f738bc3b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsAvailable_Returns_True_If_Service_Is_Available" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ConnectionTests.IsAvailable_Returns_True_If_Service_Is_Available&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ValidationTests.Successful_Validations_Work_As_Expected&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::77598126-7BB0-4C07-BF06-331033E0DE78::net9.0::WannaBeeClient.IntegrationTest.ValidationTests.Errornous_Validations_Work_As_Expected&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ae9500eb_002Dc8d5_002D4fd1_002Da306_002Db8c26602b57a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsAvailable_Throws_Exception_If_Host_Is_Unavailable" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ae9500eb_002Dc8d5_002D4fd1_002Da306_002Db8c26602b57a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IsAvailable_Throws_Exception_If_Host_Is_Unavailable" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Project Location="C:\github\WannaBeeClient.net\WannaBeeClient\WannaBeeClient.IntegrationTest" Presentation="&amp;lt;WannaBeeClient.IntegrationTest&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6484ef14_002Dc2fe_002D497a_002Db425_002Db46d160ac22d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Keys_Can_Be_Extracted" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;

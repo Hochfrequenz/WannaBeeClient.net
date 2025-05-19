@@ -13,4 +13,4 @@ services:
     ports:
       - ${WANNABEE_PORT:-7071}:8000
     environment:
-      - TRANSFORMER_URL=http://transformer:${TRANSFORMER_REST_PORT:-5021}
+      - TRANSFORMER_URL=http://transformer:5001
