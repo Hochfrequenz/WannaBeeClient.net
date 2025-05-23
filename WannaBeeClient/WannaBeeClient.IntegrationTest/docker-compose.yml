@@ -9,7 +9,7 @@ services:
       - ${TRANSFORMER_GRPC_PORT:-5020}:5000
       - ${TRANSFORMER_REST_PORT:-5021}:5001
   wannabee-backend:
-    image: ghcr.io/hochfrequenz/wanna.bee:v1.0.2
+    image: ghcr.io/hochfrequenz/wanna.bee:v1.0.3
     ports:
       - ${WANNABEE_PORT:-7071}:8000
     environment:
