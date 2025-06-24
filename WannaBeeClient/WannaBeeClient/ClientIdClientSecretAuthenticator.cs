@@ -12,7 +12,7 @@ public class ClientIdClientSecretAuthenticator : IWannaBeeAuthenticator
 {
     protected const string Auth0Domain = "https://hochfrequenz.eu.auth0.com";
     protected const string WannaBeeScope = "client:default";
-    protected const string WannBeeAudience = "https://transformerstage.bee";
+    protected const string WannBeeAudience = "https://transformer.bee";
 
     /// <summary>
     /// JWT token
