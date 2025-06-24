@@ -1,4 +1,4 @@
-﻿namespace WannaBeeClient;
+namespace WannaBeeClient;
 
 using IdentityModel.Client;
 
